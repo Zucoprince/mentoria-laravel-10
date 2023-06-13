@@ -1,5 +1,5 @@
 <h2>Section title</h2>
-<div class="table-responsive small">
+<div class="table-responsive mt-4">
     <table class="table table-striped table-sm">
       <thead>
         <tr>

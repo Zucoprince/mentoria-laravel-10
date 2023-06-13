@@ -226,9 +226,9 @@
   </div>
 </header>
     <main>
-      @yield('content')
       @include('components.navegacao')
       {{-- @include('components.table') --}}
+      @yield('content')
     </main>
   </div>
 </div>
