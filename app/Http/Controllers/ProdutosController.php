@@ -8,28 +8,31 @@ use Illuminate\Http\Request;
 class ProdutosController extends Controller
 {
     protected $produto;
-    
+
     public function __construct(Produto $produto)
     {
-        $this->produto = $produto;        
+        $this->produto = $produto;
     }
 
-    public function index (Request $request) 
+    public function index(Request $request)
     {
         $pesquisar = $request->pesquisar;
         $findProduto = $this->produto->getProdutosPesquisarIndex(search: $pesquisar ?? '');
-    
-        return view('pages.produtos.paginacao', compact('findProduto'))
-    ;}
 
-    public function add () {
-        return 'Adicionar Produtor'
-    ;}
+        return view('pages.produtos.paginacao', compact('findProduto'));
+    }
 
-    public function delete(Request $request){
+    public function add()
+    {
+        return 'Adicionar Produtor';
+    }
 
-        
+    public function delete(Request $request)
+    {
+        $id = $request->id;
+        $buscarRegistro = Produto::find($id);
+        $buscarRegistro->delete();
 
-
+        return response()->json(['success' => true]);
     }
 }
