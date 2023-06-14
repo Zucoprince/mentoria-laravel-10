@@ -269,11 +269,15 @@
                 aria-label="Search">
         </div>
     </header>
-    <main>
-        @include('components.navegacao')
-        {{-- @include('components.table') --}}
-        @yield('content')
-    </main>
+    <div class="container-fluid">
+        <div class="row">
+            @include('components.navegacao')
+            {{-- @include('components.table') --}}
+            <main>
+                @yield('content')
+            </main>
+        </div>
+    </div>
     </div>
     </div>
     @yield('scripts')
@@ -283,6 +287,7 @@
     <script src="/js/color-modes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
     <script src="/js/dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
 <script src="/js/projeto.js"></script>

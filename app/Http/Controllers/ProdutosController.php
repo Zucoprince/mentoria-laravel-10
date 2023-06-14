@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequestProduto;
+use App\Models\Componentes;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -22,11 +24,6 @@ class ProdutosController extends Controller
         return view('pages.produtos.paginacao', compact('findProduto'));
     }
 
-    public function add()
-    {
-        return 'Adicionar Produtor';
-    }
-
     public function delete(Request $request)
     {
         $id = $request->id;
@@ -34,5 +31,17 @@ class ProdutosController extends Controller
         $buscarRegistro->delete();
 
         return response()->json(['success' => true]);
+    }
+
+    public function cadastrarProduto(FormRequestProduto $request){
+        if ($request->method() == "POST") {
+            $data = $request->all();
+            $componentes = new Componentes();
+            $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
+            Produto::create($data);
+            return redirect()->route('produto.index');
+        }
+
+        return view('pages.Produtos.create');
     }
 }
