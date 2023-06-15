@@ -23,7 +23,7 @@ function deleteRegistroPaginacao(rotaUrl, idDoRegistro) {
                 window.location.reload();
                 alert('Dados excluídos com sucesso!')
             } else {
-                alert('Não foi possível excluir od dados')
+                alert('Não foi possível excluir os dados')
             }
         }).fail(function (data) {
             $.unblockUI();

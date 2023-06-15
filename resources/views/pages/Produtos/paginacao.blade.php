@@ -6,7 +6,7 @@
     </div>
     <div>
 
-        <form action="{{ route('produto.index') }}" method="get">
+        <form action="{{ route('produto.index') }}" method="GET">
             <input type="text" name="pesquisar" placeholder="Digite o nome" />
             <button> Pesquisar </button>
             <a type="button" href="{{ route('produto.cadastro') }}" class="btn btn-success float-end">
@@ -31,7 +31,7 @@
                                 <td>{{ $produto->nome }}</td>
                                 <td>{{ "R$" . ' ' . number_format($produto->valor, 2, ',', '.') }}</td>
                                 <td>
-                                    <a href="" class="btn btn-light btn-sm">
+                                    <a href="{{ route('produto.att', $produto->id) }}" class="btn btn-light btn-sm">
                                         Editar
                                     </a>
                                     <meta name='csrf-token' content="{{ csrf_token() }}" />

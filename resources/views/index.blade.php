@@ -21,7 +21,7 @@
     <link rel="mask-icon" href="{{ asset('icones/safari-pinned-tab.svg') }}" color="#712cf9">
     <link rel="icon" href="{{ asset('icones/favicon.ico') }}">
     <meta name="theme-color" content="#712cf9">
-
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
     <style>
         .bd-placeholder-img {
@@ -277,8 +277,8 @@
                 @yield('content')
             </main>
         </div>
-    </div>
-    </div>
+        <div>
+        </div>
     </div>
     @yield('scripts')
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -288,8 +288,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+    <script src="/js/projeto.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+    {!! Toastr::message() !!}
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
-<script src="/js/projeto.js"></script>
 
 </html>
