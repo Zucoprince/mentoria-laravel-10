@@ -30,8 +30,10 @@ class ProdutosController extends Controller
         $id = $request->id;
         $buscarRegistro = Produto::find($id);
         $buscarRegistro->delete();
-
+    
         return response()->json(['success' => true]);
+
+
     }
 
     public function cadastrarProduto(FormRequestProduto $request)
@@ -44,7 +46,7 @@ class ProdutosController extends Controller
             Toastr::success('Produto cadastrado com sucesso!');
             return redirect()->route('produto.index');
         }
-        return view('pages.Produtos.create');
+        return view('pages.Produtos.create', compact('ultimoProdutoCadastro'));
     }
 
     public function atualizarProduto(FormRequestProduto $request, $id)
