@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\VendasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +39,7 @@ Route::prefix('clientes')->group(function () {
 });
 
 Route::prefix('vendas')->group(function () {
-    Route::get('/', [ClientesController::class, 'index'])->name('vendas.index');
-    Route::get('/cadastrarVendas', [ClientesController::class, 'cadastrarVendas'])->name('vendas.cadastro');
-    Route::post('/cadastrarVendas', [ClientesController::class, 'cadastrarVendas'])->name('vendas.cadastro');
+    Route::get('/', [VendasController::class, 'index'])->name('vendas.index');
+    Route::get('/cadastrarVendas', [VendasController::class, 'cadastrarVendas'])->name('vendas.cadastro');
+    Route::post('/cadastrarVendas', [VendasController::class, 'cadastrarVendas'])->name('vendas.cadastro');
 });

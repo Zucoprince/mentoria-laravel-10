@@ -8,14 +8,11 @@ use Illuminate\Database\Seeder;
 
 class VendasSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         Vendas::create([
-            'numero_da_venda' => 'Pedro Zucolo',
-            'produto_id' => 5,
+            'numero_venda' => 1,
+            'produto_id' => 6,
             'cliente_id' => 2,
         ]
             

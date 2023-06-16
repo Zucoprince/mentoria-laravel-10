@@ -15,16 +15,16 @@ class Vendas extends Model
         'cliente_id',
     ];
 
-    public function getProdutosPesquisarIndex(string $search = '')
+    public function getVendasPesquisarIndex(string $search = '')
     {
-        $produto = $this->where(function ($query) use ($search) {
+        $venda = $this->where(function ($query) use ($search) {
             if ($search) {
-                $query->where('nome', $search);
-                $query->orWhere('nome', 'LIKE', "%{$search}%");
+                $query->where('numero_venda', $search);
+                $query->orWhere('numero_venda', 'LIKE', "%{$search}%");
             }
         })->get();
 
-        return $produto;
+        return $venda;
     }
 
     public function produto(){
