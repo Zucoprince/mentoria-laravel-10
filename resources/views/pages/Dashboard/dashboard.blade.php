@@ -81,6 +81,32 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4">
+                <div class="card card-margin">
+                    <div class="card-header no-border">
+                        <h5 class="card-title">Último Cadastro de Usuário</h5>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="widget-49">
+                            <div class="widget-49-title-wrapper">
+                                <div class="widget-49-date-primary border-bottom mb-3">
+                                    <span class="widget-49-date-day">{{ $diaUser }}</span>
+                                </div>
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">Produto: {{ $ultimoUser->name }}</span>
+                            </div>
+                            <div class="widget-49-meeting-info">
+                                <span class="widget-49-pro-title">Cliente: {{ $ultimoUser->email }}</span>
+                            </div>
+                            <div class="widget-49-meeting-action">
+                                <a href="{{ route('usuario.index') }}" class="btn btn-sm btn-flash-border-primary">Ver
+                                    Todos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

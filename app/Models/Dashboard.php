@@ -11,6 +11,7 @@ class Dashboard extends Model
     protected $fillable = [
         'produto_id',
         'cliente_id',
+        'users_id'
     ];
 
     public function produto(){
@@ -23,5 +24,9 @@ class Dashboard extends Model
 
     public function vendas(){
         return $this->belongsTo(Vendas::class);
+    }
+
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 }

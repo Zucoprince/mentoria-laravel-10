@@ -46,7 +46,7 @@ class ProdutosController extends Controller
             Toastr::success('Produto cadastrado com sucesso!');
             return redirect()->route('produto.index');
         }
-        return view('pages.Produtos.create', compact('ultimoProdutoCadastro'));
+        return view('pages.Produtos.create');
     }
 
     public function atualizarProduto(FormRequestProduto $request, $id)
